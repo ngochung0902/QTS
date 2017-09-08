@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorSecondary"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+  >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivuserprofile"
+        android:layout_width="@dimen/circleimage_small"
+        android:layout_height="@dimen/circleimage_small"
+        android:layout_gravity="center"
+        android:src="@drawable/ph_profilepic"
+        app:border_color="@android:color/white"
+        app:border_width="1dp"
+        />
+
+    <TextView
+        android:id="@+id/tv_navFLname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Gwyneth Marie"
+        android:textSize="@dimen/verylargetextsize"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        />
+
+    <TextView
+        android:id="@+id/tv_navUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/normaltextsize"
+        android:text="beentheredonethat"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_marginTop="8dp"
+        android:textAllCaps="true"/>
+
+</LinearLayout>

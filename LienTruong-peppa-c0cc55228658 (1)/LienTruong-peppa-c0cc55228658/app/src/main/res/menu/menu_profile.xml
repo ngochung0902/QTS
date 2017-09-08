@@ -1,0 +1,55 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.foodapp.lien.foodapp.MainActivity">
+
+    <item
+        android:id="@+id/actionCallNummber"
+        android:orderInCategory="200"
+        android:title="@string/call_label"
+        app:showAsAction="always"
+        android:icon="@drawable/callwhite"/>
+    <item
+        android:id="@+id/actionCallProfileB"
+        android:orderInCategory="200"
+        android:title="@string/action_profile"
+        app:showAsAction="always"
+        android:icon="@drawable/callblack"/>
+    <item
+        android:id="@+id/actionFilterProfile"
+        android:orderInCategory="300"
+        android:title="@string/action_profile"
+        app:showAsAction="always"
+        android:icon="@drawable/filterwhite"/>
+    <item
+        android:id="@+id/actionFilterProfileB"
+        android:orderInCategory="300"
+        android:title="@string/action_profile"
+        app:showAsAction="always"
+        android:icon="@drawable/filterblack"/>
+
+    <item
+        android:id="@+id/favouriteProfile"
+        android:orderInCategory="100"
+        android:title="favourite"
+        app:showAsAction="always"
+        android:icon="@drawable/star" />   
+
+    <item
+        android:id="@+id/favouriteFilledProfile"
+        android:orderInCategory="100"
+        android:title="favourited"
+        app:showAsAction="always"
+        android:icon="@drawable/star_filled"/>
+
+    <item
+        android:id="@+id/favouriteWhiteProfile"
+        android:orderInCategory="100"
+        android:title="favourite"
+        app:showAsAction="always"
+        android:icon="@drawable/star_white" />   
+
+
+
+
+</menu>

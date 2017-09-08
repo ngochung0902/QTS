@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/actionAddresspin"
+        android:title="@string/action_profile"
+        app:showAsAction="always"
+        android:icon="@mipmap/addresspingrey_action"/>
+    <item
+        android:id="@+id/actionCallBlack"
+        android:title="@string/action_profile"
+        app:showAsAction="always"
+        android:icon="@mipmap/phone"/>
+
+    <item
+        android:id="@+id/actionFavBborder"
+        android:title="favourite"
+        app:showAsAction="always"
+        android:icon="@mipmap/favourite_action" />   
+
+    <item
+        android:id="@+id/actionFav"
+        android:title="favourited"
+        app:showAsAction="always"
+        android:icon="@mipmap/favouritefilled_action"/>
+
+
+
+    <item
+        android:id="@+id/actionFilterProfileB"
+        android:title="@string/action_profile"
+        app:showAsAction="always"
+        android:icon="@mipmap/filter"/>
+    <!--<item-->
+        <!--android:id="@+id/action_quickpost"-->
+        <!--android:icon="@mipmap/postgrey"-->
+
+        <!--app:showAsAction="always"-->
+        <!--android:title="" />-->
+
+
+</menu>

@@ -1,0 +1,327 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/accoutScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ca_rl_height">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/detail_image" />
+
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/fbAccountButton"
+                android:layout_width="330dp"
+                android:layout_height="46dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/round_button"
+                android:letterSpacing=".05"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:textColor="@android:color/white"
+                android:textSize="14dp"
+                android:text="@string/button_facebook"
+                app:com_facebook_login_text="@string/button_facebook"
+                app:com_facebook_logout_text="@string/button_facebook"/>
+
+            <View
+                android:id="@+id/gradientBottomDetail"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"
+                android:adjustViewBounds="true"
+                android:background="@drawable/gradient_bottom_dark"
+
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/gradientBottomDetail"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="40dp"
+                android:gravity="center"
+                android:text="We won't post stuff on your behalf.\nPinky promise."
+                android:textColor="@android:color/white"
+                android:textSize="16dp"
+                android:lineSpacingExtra="6dp"/>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="40dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingBottom="6dp">
+
+                    <ImageView
+                        style="@style/imgicon_field"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/name" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/fnameTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="14dp"
+                        android:text="@string/f_hint"
+                        android:textColor="@color/colorTitleText"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/firstNameED"
+                        style="@style/customdefault_edittext"
+                        android:inputType="textCapSentences"
+                        android:maxLength="20"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingBottom="6dp">
+
+                    <ImageView
+                        style="@style/imgicon_field"
+                        android:gravity="end"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/name"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lNameTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="14dp"
+                        android:text="@string/l_hint"
+                        android:textColor="@color/colorTitleText"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/lastNameED"
+                        style="@style/customdefault_edittext"
+                        android:maxLength="20"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingBottom="6dp">
+
+                    <ImageView
+                        style="@style/imgicon_field"
+                        android:src="@mipmap/name"
+
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/uNameTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="14dp"
+                        android:text="@string/u_hint"
+                        android:textColor="@color/colorTitleText"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/userED"
+                        style="@style/customdefault_edittext"
+                        android:maxLength="30"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingBottom="6dp">
+
+                    <ImageView
+                        style="@style/imgicon_field"
+                        android:src="@mipmap/email"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/emailTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="14dp"
+                        android:text="@string/email_hint"
+                        android:textColor="@color/colorTitleText"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/mailED"
+                        style="@style/customdefault_edittext"
+                        android:inputType="textEmailAddress"
+                       />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="30dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingBottom="6dp">
+
+                    <ImageView
+                        style="@style/imgicon_field"
+                        android:src="@mipmap/password"
+
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/passwordTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="14dp"
+                        android:text="@string/Passwood_label"
+                        android:textColor="@color/colorTitleText"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/passwordED"
+                        style="@style/customdefault_edittext"
+                        android:inputType="textWebPassword"
+                         />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/createBTN"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="240dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/pink_round_button"
+                android:letterSpacing=".1"
+                android:text="@string/create_account"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

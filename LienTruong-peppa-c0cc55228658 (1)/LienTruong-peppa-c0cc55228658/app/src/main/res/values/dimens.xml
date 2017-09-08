@@ -1,0 +1,77 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">20dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">16dp</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="badge_text_size">13sp</dimen>
+
+    <!-- dimensions -->
+    <!--<dimen name="image_width">120dp</dimen>
+    <dimen name="image_final_width">32dp</dimen>
+    <dimen name="spacing_normal">46dp</dimen>-->
+
+    <dimen name="image_width">150dp</dimen>
+    <dimen name="image_final_width">32dp</dimen>
+    <dimen name="spacing_normal">90dp</dimen>
+
+    <dimen name="text_width">240dp</dimen>
+    <dimen name="text_final_width">140dp</dimen>
+    <dimen name="spacing_normal_20">16dp</dimen>
+    <dimen name="spacing_normal_top">46dp</dimen>
+    <dimen name="image_small_width">45dp</dimen>
+    <dimen name="coordinate_relative_margintop">195dp</dimen>
+
+
+    <dimen name="cordinate_ll_width">250dp</dimen>
+    <dimen name="coordinate_linear_margintop">200dp</dimen>
+    <dimen name="cordinate_ll_small_width">15dp</dimen>
+
+    <!--facebook button textsize-->
+    <dimen name="fbbtn_textsize">14dp</dimen>
+
+    <dimen name="smalltextsize">13dp</dimen>
+    <dimen name="verysmalltextsize">12dp</dimen>
+    <dimen name="generaltextsize">13dp</dimen>
+    <dimen name="normaltextsize">15dp</dimen>
+    <dimen name="mediumtextsize">17dp</dimen>
+    <dimen name="largetextsize">20dp</dimen>
+    <dimen name="verylargetextsize">25dp</dimen>
+    <dimen name="verybiglargetextsize">28dp</dimen>
+    <dimen name="headercentertextsize">18dp</dimen>
+    <dimen name="ToolbarTiltle_textsize">20dp</dimen>
+    <dimen name="commnent_rate">20sp</dimen>
+
+    <!--photo size-->
+    <dimen name="commonheight_headerphoto">300dp</dimen>
+    <dimen name="circleimage_medium">100dp</dimen>
+    <dimen name="circleimage_small">70dp</dimen>
+    <dimen name="circleimage_verysmall">35dp</dimen>
+    <dimen name="circleimage_list">50dp</dimen>
+    <dimen name="fullbuttonheight">50dp</dimen>
+
+    <!--favourite icon size-->
+    <dimen name="favouritesize">20dp</dimen>
+    <dimen name="ratingtextsize">20dp</dimen>
+
+    <!--restaurant viewpager height-->
+    <dimen name="rest_result_viewpager_height">150dp</dimen>
+
+    <dimen name="parallax_image_height">270dp</dimen>
+    <dimen name="toolbar_margin_start">20dp</dimen>
+
+    <dimen name="plusposticon">40dp</dimen>
+
+    <dimen name="rate_in_marginleft">14dp</dimen>
+
+    <dimen name="ca_rl_height">290dp</dimen>
+    <dimen name="recycle_2_width_height">180dp</dimen>
+    <dimen name="post_buttonheight">60dp</dimen>
+    <dimen name="drawablepad">5dp</dimen>
+
+
+</resources>

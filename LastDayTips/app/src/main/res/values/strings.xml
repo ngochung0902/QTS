@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LastDayTips</string>
+    <string name="EYB"><i><b>Establish Your Basics</b></i></string>
+    <string name="FYP"><i><b>Fortify Your Position</b></i></string>
+    <string name="HU"><i><b>Hunt for Upgrades</b></i></string>
+    <string name="HFO"><i><b>How to Find Oak</b></i></string>
+    <string name="HFS"><i><b>How to Find Steel</b></i></string>
+</resources>

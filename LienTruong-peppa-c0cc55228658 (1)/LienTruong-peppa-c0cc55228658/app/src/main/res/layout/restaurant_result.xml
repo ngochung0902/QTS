@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/rest_result_viewpager_height"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+     >
+
+
+    <LinearLayout
+        android:id="@+id/restauarentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageViewRestauarntResult"
+            android:layout_width="@dimen/circleimage_list"
+            android:layout_height="@dimen/circleimage_list"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/no_image"
+            android:layout_marginTop="2dp"
+            app:border_color="@color/selectedlightcolor"
+            app:border_width="2dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/restaurantNameResultTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/restaurant_name"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="10dp"
+                            android:singleLine="true"
+                            android:ellipsize="end"
+                            android:layout_toLeftOf="@id/favouriteLLT"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp" />
+
+                        <LinearLayout
+                            android:id="@+id/favouriteLLT"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:orientation="horizontal" >
+
+                            <ImageView
+                                android:id="@+id/heartImageRResult"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_marginRight="2dp"
+                                android:layout_marginTop="9dp"
+                                android:gravity="top"
+                                android:src="@mipmap/heart"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/dishRatingRResultTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:text="@string/rating"
+                                android:textColor="@android:color/black"
+                                android:textSize="20sp"
+                                android:paddingTop="4dp"/>
+
+                            <TextView
+                                android:id="@+id/dishRatingPercentRResultTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:paddingTop="9dp"
+                                android:text="@string/percent_label"
+                                android:textColor="@android:color/black"
+                                android:textSize="8sp" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/addressResultTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="4dp"
+                android:text="@string/restaurant_address"
+                android:textColor="@color/colorTitleText"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:padding="3dp"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/callRestauratBTN"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/horizontal_line"
+        android:gravity="center"
+        >
+
+            <ImageView
+                android:id="@+id/phoneImageRResult"
+               style="@style/callImageview"
+                />
+
+        <me.grantland.widget.AutofitTextView
+                android:id="@+id/restaurantNumberResultTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.1"
+                android:text="@string/empty"
+                android:textColor="@color/colorTitleText"
+                android:textSize="@dimen/generaltextsize"
+                autofit:minTextSize="@dimen/generaltextsize"
+                android:singleLine="true"
+                android:layout_toRightOf="@+id/phoneImageRResult"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

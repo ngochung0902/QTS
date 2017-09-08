@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".Activity.RateActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_grey"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/dishImageRate"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/ph_dish"
+                android:scaleType="centerCrop"
+                android:tint="#11000000"
+                android:visibility="visible" />
+
+            <View
+                android:id="@+id/gradientTop"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="top"
+                android:adjustViewBounds="true"
+                android:background="@drawable/gradient_top" />
+
+            <View
+                android:id="@+id/gradientBottom"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom"
+                android:adjustViewBounds="true"
+                android:background="@drawable/gradient_bottom" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <me.grantland.widget.AutofitTextView
+                        android:id="@+id/dishNameRateTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLength="24"
+                        android:singleLine="true"
+                        android:text="fvgvcgr bdh chd cbdhhd hvf"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/verylargetextsize"
+                        android:visibility="visible"
+                        autofit:minTextSize="@dimen/generaltextsize" />
+
+                    <EditText
+                        android:id="@+id/etdishname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true"
+                        android:text="f"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/mediumtextsize"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/ivdishnameEdit"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="15dp"
+                        android:padding="6dp"
+                        android:src="@mipmap/edit"
+                        android:visibility="invisible" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/restaurantNameDetailTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/restaurant_name"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/normaltextsize" />
+
+                    <TextView
+                        android:id="@+id/tvdishprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/price_label"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/normaltextsize" />
+
+                    <EditText
+                        android:id="@+id/etdishprice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|left"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="4dp"
+                        android:ellipsize="end"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true"
+                        android:text="@string/price_label"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/normaltextsize"
+                        android:visibility="gone" />
+
+
+                    <ImageView
+                        android:id="@+id/ivdishpriceEdit"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginLeft="15dp"
+                        android:padding="6dp"
+                        android:src="@mipmap/edit"
+                        android:visibility="invisible" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ScrollViewRate"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--first raw what do you rate-->
+                    <TextView
+                        android:id="@+id/dishRateLabelRateTv"
+                        style="@style/ratetextstylebold"
+                        android:text="@string/dish_rating_label" />
+
+
+                    <!--rate using seek bar-->
+
+                    <LinearLayout style="@style/rate_linear_layout">
+
+                        <SeekBar
+                            android:id="@+id/seekBarRate"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/rate_in_marginleft"
+                            android:layout_weight="6" />
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+
+                            <TextView
+                                android:id="@+id/percentLabelRateTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentRight="true"
+                                android:gravity="center"
+                                android:paddingBottom="12dp"
+                                android:text="@string/percent_label"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/rateNumberRateTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_toLeftOf="@id/percentLabelRateTv"
+                                android:gravity="center"
+                                android:text="0"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!--light grey line-->
+                    <View style="@style/viewline" />
+
+
+                    <!--   comment box start-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginLeft="@dimen/rate_in_marginleft"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_margin="10dp"
+                                android:src="@mipmap/comment"
+                                android:visibility="visible" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/howWasThisDishRateLayout"
+                                style="@style/ratetextstylebold"
+                                android:gravity="left"
+                                android:text="@string/comment" />
+
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+
+                                <EditText
+                                    android:id="@+id/howWasThisDishRateEt"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_marginRight="14dp"
+                                    android:layout_marginTop="10dp"
+                                    android:hint="@string/comment_instruction"
+                                    android:inputType="textCapSentences"
+                                    android:maxLength="150"
+                                    android:paddingLeft="14dp"
+                                    android:textColor="@color/line_grey"
+                                    android:textColorHint="@color/hint_grey"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/editLengthView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_gravity="end"
+                                    android:layout_marginBottom="1dp"
+                                    android:layout_marginRight="24dp"
+                                    android:text="0/150"
+                                    android:textColor="@color/line_grey"
+                                    android:textSize="10dp" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <!--comment box end with bottom text length-->
+
+                    <!--light grey line-->
+                    <View
+                        style="@style/viewline"
+                        android:layout_marginTop="10dp" />
+
+                    <!--type horizontal box start-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="24dp"
+                            android:layout_marginLeft="@dimen/rate_in_marginleft"
+                            android:layout_marginRight="10dp"
+                            android:background="@android:color/white"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <!--type text-->
+
+                            <TextView
+                                android:id="@+id/tvtype"
+                                style="@style/ratetextstylebold"
+                                android:gravity="left"
+                                android:text="@string/type" />
+
+                            <!--horizontal - tag type start-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal"
+                                android:weightSum="4">
+
+                                <CheckBox
+                                    android:id="@+id/checkStarter"
+                                    style="@style/rate_checkbox"
+                                    android:text="@string/entry_label" />
+
+                                <CheckBox
+                                    android:id="@+id/checkMain"
+                                    style="@style/rate_checkbox"
+                                    android:text="@string/Main_label" />
+
+                                <CheckBox
+                                    android:id="@+id/checkDessert"
+                                    style="@style/rate_checkbox"
+                                    android:text="@string/Dessert_label" />
+
+                                <CheckBox
+                                    android:id="@+id/checkDrink"
+                                    style="@style/rate_checkbox"
+                                    android:text="@string/Drink_label" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!--horizontal - tag type is end-->
+
+                        <!--light grey line-->
+                        <View style="@style/viewline" />
+
+                        <!--verticle - tag type is end-->
+                        <RelativeLayout style="@style/rate_relative_tag">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="bottom">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@mipmap/vegetarian" />
+
+                                <TextView
+                                    android:id="@+id/vegetarianCheck"
+                                    style="@style/rate_checkbox"
+                                    android:text="@string/Vegetarian_label" />
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/checkVegita"
+                                style="@style/rate_checkbox_emptytext" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout style="@style/rate_relative_tag">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="bottom">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@mipmap/vegan" />
+
+                                <TextView
+                                    android:id="@+id/veganCheck"
+                                    style="@style/rate_checkbox"
+                                    android:text="@string/Vegan_label" />
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/checkVegan"
+                                style="@style/rate_checkbox_emptytext" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout style="@style/rate_relative_tag">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="bottom">
+
+                                <ImageView
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@mipmap/glutenfree" />
+
+                                <TextView
+                                    android:id="@+id/glutenFreeCheck"
+                                    style="@style/rate_checkbox"
+                                    android:text="@string/Gluten_free_label" />
+                            </LinearLayout>
+
+                            <CheckBox
+                                android:id="@+id/checkGluten"
+                                style="@style/rate_checkbox_emptytext" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_sharewith"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+                            <!--light grey line-->
+                            <View style="@style/viewline" />
+
+                            <!--end vertical - tag type-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="24dp"
+                                android:layout_marginLeft="@dimen/rate_in_marginleft"
+                                android:layout_marginRight="10dp"
+                                android:background="@android:color/white"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <!--type text-->
+
+                                <TextView
+                                    android:id="@+id/tvshare"
+                                    style="@style/ratetextstylebold"
+                                    android:gravity="left"
+                                    android:text="@string/share" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2"
+                                    android:visibility="visible">
+
+                                    <CheckBox
+                                        android:id="@+id/checkfacebook"
+                                        style="@style/rate_checkbox"
+                                        android:text="@string/share_with_facebook" />
+
+                                    <CheckBox
+                                        android:id="@+id/checkinstagram"
+                                        style="@style/rate_checkbox"
+                                        android:text="@string/share_with_instagram" />
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/doneRateButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/colorSecondary"
+                        android:gravity="center"
+                        android:letterSpacing="0.1"
+                        android:text="@string/done"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

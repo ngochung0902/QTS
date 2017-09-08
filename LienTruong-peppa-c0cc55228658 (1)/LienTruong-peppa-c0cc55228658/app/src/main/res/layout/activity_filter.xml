@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+android:fitsSystemWindows="true"
+    android:background="@color/colorBacker"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            >
+
+            <TextView
+                style="@style/toolbarTitletext"
+                android:id="@+id/toolbar_title"
+                android:text="Filter"
+                android:textColor="@android:color/white"
+                />
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ScrollViewRate"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:orientation="vertical">
+
+            <!--  sort by start -->
+
+            <LinearLayout
+                style="@style/filterLinearLayout"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/sortByTv"
+                    style="@style/filterTitletext"
+                    android:text="@string/sort_by_label" />
+
+                <RadioGroup
+                    android:id="@+id/rgsortby"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/ratingRadio"
+                        style="@style/filter_radio"
+
+                        android:text="@string/rating_label" />
+
+                    <RadioButton
+                        android:id="@+id/priceRadio"
+                        style="@style/filter_radio"
+                        android:text="@string/price_label" />
+
+                    <RadioButton
+                        android:id="@+id/distanceRadio"
+                        style="@style/filter_radio"
+                        android:text="@string/distance_label" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <!--sort by end-->
+
+             <RelativeLayout
+                style="@style/filterLinearLayout"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvfavoritefirst"
+                        style="@style/filterTitletext"
+                        android:text="@string/showfavoritefirst_label" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/checkshowfavorite"
+                    style="@style/rate_checkbox_emptytext"
+                    android:checked="false" />
+
+            </RelativeLayout>
+
+            <!--price range start-->
+            <LinearLayout xmlns:rsb="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/white"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/priceRangeTv"
+                    style="@style/filterTitletext"
+                    android:text="@string/price_range_label" />
+
+
+                <com.yahoo.mobile.client.android.util.rangeseekbar.RangeSeekBar
+                    android:id="@+id/rangeSeekbar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    rsb:absoluteMaxValue="100"
+                    rsb:absoluteMinValue="1" />
+
+                <SeekBar
+                    android:id="@+id/seekBarRate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="6"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/priceMin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="$min"
+                        android:textColor="@color/colorTitleText"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/priceMax"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="end"
+                        android:text="$max"
+                        android:textColor="@color/colorTitleText"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--  price range end  -->
+
+
+            <!-- Rating start-->
+
+            <LinearLayout
+                style="@style/filterLinearLayout"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/tvrating"
+                    style="@style/filterTitletext"
+                    android:text="@string/rating_label" />
+
+                <RadioGroup
+                    android:id="@+id/rgrating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_all"
+                        style="@style/filter_radio"
+                        android:checked="true"
+                        android:text="@string/all" />
+
+                    <RadioButton
+                        android:id="@+id/rb__fifty"
+                        style="@style/filter_radio"
+                        android:text="@string/fiftyhigher" />
+
+                    <RadioButton
+                        android:id="@+id/rb_seventyfive"
+                        style="@style/filter_radio"
+                        android:text="@string/seventyfivehigher" />
+
+                    <RadioButton
+                        android:id="@+id/rb_ninety"
+                        style="@style/filter_radio"
+                        android:text="@string/ninetyhigher" />
+                </RadioGroup>
+
+            </LinearLayout>
+            <LinearLayout
+                style="@style/filterLinearLayout"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/tvdistance"
+                    style="@style/filterTitletext"
+                    android:text="@string/distance_label" />
+
+                <RadioGroup
+                    android:id="@+id/rgdistance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_two"
+                        style="@style/filter_radio"
+                        android:checked="true"
+                        android:text="2km" />
+
+                    <RadioButton
+                        android:id="@+id/rb__five"
+                        style="@style/filter_radio"
+                        android:text="5km" />
+
+                    <RadioButton
+                        android:id="@+id/rb_ten"
+                        style="@style/filter_radio"
+                        android:text="10km" />
+
+                    <RadioButton
+                        android:id="@+id/rb_twenty"
+                        style="@style/filter_radio"
+                        android:text="20km" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <!--end rating-->
+
+            <!--first tag-->
+            <LinearLayout style="@style/filterLinearLayout1"
+
+                >
+
+                <RelativeLayout style="@style/rate_relative_tag">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/starter" />
+
+                        <TextView
+                            android:id="@+id/tventrylabel"
+                            style="@style/rate_checkbox"
+                            android:text="@string/entry_label" />
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/checkentry"
+                        style="@style/rate_checkbox_emptytext" />
+
+                </RelativeLayout>
+
+                <RelativeLayout style="@style/rate_relative_tag">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/main" />
+
+                        <TextView
+                            android:id="@+id/tvmainlabel"
+                            style="@style/rate_checkbox"
+                            android:text="@string/Main_label" />
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/checkmain"
+                        style="@style/rate_checkbox_emptytext" />
+
+                </RelativeLayout>
+
+                <RelativeLayout style="@style/rate_relative_tag">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/dessert" />
+
+                        <TextView
+                            android:id="@+id/tvdesertlabel"
+                            style="@style/rate_checkbox"
+                            android:text="@string/Dessert_label" />
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/checkdessert"
+                        style="@style/rate_checkbox_emptytext" />
+
+                </RelativeLayout>
+
+                <RelativeLayout style="@style/rate_relative_tag">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/drink" />
+
+                        <TextView
+                            android:id="@+id/tvdrinklabel"
+                            style="@style/rate_checkbox"
+                            android:text="@string/Drink_label" />
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/checkdrink"
+                        style="@style/rate_checkbox_emptytext" />
+
+                </RelativeLayout>
+            </LinearLayout>
+            <!--end of first  agg-->
+
+
+            <LinearLayout
+                style="@style/filterLinearLayout1"
+                android:layout_marginBottom="20dp">
+
+                <RelativeLayout style="@style/rate_relative_tag">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="bottom">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/vegetarian" />
+
+                        <TextView
+                            android:id="@+id/vegetarianCheck"
+                            style="@style/rate_checkbox"
+                            android:text="@string/Vegetarian_label" />
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/checkVegita"
+                        style="@style/rate_checkbox_emptytext" />
+
+                </RelativeLayout>
+
+                <RelativeLayout style="@style/rate_relative_tag">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="bottom">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/vegan" />
+
+                        <TextView
+                            android:id="@+id/veganCheck"
+                            style="@style/rate_checkbox"
+                            android:text="@string/Vegan_label" />
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/checkVegan"
+                        style="@style/rate_checkbox_emptytext" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout style="@style/rate_relative_tag">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="bottom">
+
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@mipmap/glutenfree" />
+
+                        <TextView
+                            android:id="@+id/glutenFreeCheck"
+                            style="@style/rate_checkbox"
+                            android:text="@string/Gluten_free_label" />
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/checkGluten"
+                        style="@style/rate_checkbox_emptytext" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

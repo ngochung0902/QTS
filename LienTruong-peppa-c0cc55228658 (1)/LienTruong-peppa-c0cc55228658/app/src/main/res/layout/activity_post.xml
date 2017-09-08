@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Activity.PostActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/post_buttonheight">
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ScrollViewRat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/postImage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="300dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:tint="#11000000"
+                    android:src="@drawable/no_image"
+
+                    android:visibility="visible"/>
+
+
+                <!--light grey line-->
+                <View style="@style/viewline" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:orientation="vertical"
+                            android:paddingBottom="6dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_margin="10dp"
+                                android:gravity="end"
+                                android:src="@mipmap/name" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/restaurantNameTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="14dp"
+                                android:text="@string/restaurant_label"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorTitleText"
+                                android:textSize="@dimen/generaltextsize" />
+
+                            <AutoCompleteTextView
+                                android:id="@+id/acrestaurantInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:hint="@string/hintRestaurantname"
+                                android:inputType="textCapSentences"
+                                android:paddingLeft="14dp"
+                                android:textColorHint="@color/hint_grey"
+                                android:textSize="@dimen/normaltextsize"
+
+                                />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--Restaurant address start-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical"
+                            android:paddingBottom="6dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_margin="10dp"
+                                android:gravity="end"
+                                android:src="@mipmap/addresspin" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:layout_toLeftOf="@+id/tvplus">
+
+                            <TextView
+                                android:id="@+id/tvrestaAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="14dp"
+                                android:text="@string/rest_address_label"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorTitleText"
+                                android:textSize="@dimen/generaltextsize" />
+
+                            <AutoCompleteTextView
+                                android:id="@+id/acrestAddress"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:hint="What is the restaurant address?"
+                                android:inputType="textCapSentences"
+                                android:paddingLeft="14dp"
+                                android:textColorHint="@color/hint_grey"
+                                android:textSize="@dimen/normaltextsize"
+                                android:focusable="false"
+                                android:maxLength="50"/>
+
+                            <AutoCompleteTextView
+                                android:id="@+id/etrestaddressnew"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:hint="@string/hintAddress"
+                                android:inputType="textCapSentences"
+                                android:paddingLeft="14dp"
+                                android:layout_marginTop="10dp"
+                                android:textColorHint="@color/hint_grey"
+                                android:textSize="@dimen/normaltextsize"
+                                android:maxLength="70"
+                                android:visibility="gone"/>
+
+
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/tvplus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/verylargetextsize"
+                            android:text="+"
+                            android:visibility="gone"
+                            android:layout_alignParentRight="true"
+                            android:padding="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="12dp"
+                            android:textColor="@color/colorTitleText"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <!-- dish name start -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="30dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:orientation="vertical"
+                            android:paddingBottom="6dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_margin="10dp"
+                                android:gravity="end"
+                                android:src="@drawable/food" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/dishnameTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="14dp"
+                                android:text="@string/dish_name_label"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorTitleText"
+                                android:textSize="@dimen/generaltextsize" />
+
+                            <AutoCompleteTextView
+                                android:id="@+id/acdishInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:hint="@string/hintDishname"
+                                android:inputType="textCapSentences"
+                                android:paddingLeft="14dp"
+                                android:textColorHint="@color/hint_grey"
+                                android:textSize="@dimen/normaltextsize"
+                                android:maxLength="35"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="30dp"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:orientation="vertical"
+                            android:paddingBottom="6dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_margin="10dp"
+                                android:gravity="end"
+                                android:src="@drawable/cash" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:id="@+id/priceTV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="14dp"
+                                android:text="@string/price_Post"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorTitleText"
+                                android:textSize="@dimen/generaltextsize" />
+
+                            <AutoCompleteTextView
+                                android:id="@+id/acpriceInput"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:inputType="number|numberDecimal"
+                                android:paddingLeft="14dp"
+                                android:textColorHint="@color/hint_grey"
+                                android:hint="Dish price"
+                                android:textSize="@dimen/normaltextsize"
+                                android:maxLength="7"
+                                android:imeOptions="actionDone"/>
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentBottom="true">
+            <Button
+                android:id="@+id/llnextDish"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/post_buttonheight"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:visibility="visible"
+                android:letterSpacing="0.1"
+                android:text="@string/next_item"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/mediumtextsize"
+                android:textStyle="normal"
+                android:clickable="true"
+                android:background="@color/colorSecondary"/>
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/llnextDish"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/post_buttonheight"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_weight="1"-->
+                <!--android:clickable="true"-->
+                <!--android:background="@color/colorSecondary">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:gravity="center"-->
+                    <!--android:letterSpacing="0.1"-->
+                    <!--android:text="@string/next_item"-->
+                    <!--android:textAllCaps="true"-->
+                    <!--android:textColor="@android:color/white"-->
+                    <!--android:textSize="@dimen/mediumtextsize"-->
+                    <!--android:clickable="false"-->
+
+                    <!--android:textStyle="bold"/>-->
+            <!--</LinearLayout>-->
+
+            <View
+                android:id="@+id/vline"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:background="@color/white" />
+
+            <Button
+                android:id="@+id/btnDone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/post_buttonheight"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:visibility="visible"
+                android:letterSpacing="0.1"
+                android:text="@string/done"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/mediumtextsize"
+                android:textStyle="normal"
+                android:clickable="true"
+                android:background="@color/colorSecondary"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

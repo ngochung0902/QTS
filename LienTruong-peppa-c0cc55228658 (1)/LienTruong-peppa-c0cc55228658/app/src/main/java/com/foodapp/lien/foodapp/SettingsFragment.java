@@ -1,0 +1,463 @@
+package com.foodapp.lien.foodapp;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.content.LocalBroadcastManager;
+import android.support.v7.app.AlertDialog;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
+
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import model.UserModel;
+import parsing.ParsingFunctions;
+import parsing.WebFunctions;
+import utility.ConnectionDetector;
+import utility.Constant;
+import utility.Generalfunction;
+import utility.GlobalVar;
+
+
+public class SettingsFragment extends Fragment {
+
+    Context thisContext;
+
+    private ImageView ivCoverimage, ivProfilephoto;
+    private TextView tvFname,tvLname,tvUsername,tvEmail;
+    private TextView tvfL_name,tvUname;
+    private EditText etFname,etLname,etUsername,etEmail,etPassword;
+    private ScrollView scrollView;
+    private EditText etoldPassword;
+    private EditText etnewPassword;
+    Button btnDone, btnEdit, btnUpdate;
+
+    LinearLayout llNonEdit, llEdit;
+
+    String strUserid="";
+    String strValidateMessage="";
+
+    private ConnectionDetector cdObj;
+    UserModel userModel;
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        thisContext = this.getActivity();
+        //LocalBroadcastManager.getInstance(getActivity()).registerReceiver(mMessageReceiver, new IntentFilter("edit_profile"));
+        cdObj=new ConnectionDetector(thisContext);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view =inflater.inflate(R.layout.fragment_settings, container, false);
+
+        // Mapping Imageview
+        ivCoverimage= (ImageView) view.findViewById(R.id.ivCoverimage);
+        ivProfilephoto= (ImageView) view.findViewById(R.id.ivprofilephoto);
+
+        //MApping Textview
+        tvFname= (TextView) view.findViewById(R.id.tvfname_edit);
+        tvLname= (TextView) view.findViewById(R.id.tvlname_edit);
+        tvUsername= (TextView) view.findViewById(R.id.tvusername_edit);
+        tvEmail= (TextView) view.findViewById(R.id.tvemail_edit);
+
+        tvfL_name= (TextView) view.findViewById(R.id.userFNameSettingTv);
+        tvUname= (TextView) view.findViewById(R.id.restaurantNameDetailTv);
+
+        //Mapping Edittext
+        etFname=(EditText)view.findViewById(R.id.etfname);
+        etLname=(EditText)view.findViewById(R.id.etlname);
+        etUsername=(EditText)view.findViewById(R.id.etusername);
+        etEmail=(EditText)view.findViewById(R.id.etemail);
+
+        llNonEdit = (LinearLayout) view.findViewById(R.id.nonEditLLT);
+        llEdit = (LinearLayout) view.findViewById(R.id.editLLT);
+        scrollView = (ScrollView) view.findViewById(R.id.scrollView);
+
+        //Edit view
+        btnUpdate = (Button) view.findViewById(R.id.updateButton);
+        etPassword = (EditText) view.findViewById(R.id.passwordEdit);
+        etPassword.setFocusable(false);
+        etPassword.setClickable(true);
+        etPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPopUp();
+            }
+        });
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(CheckValidattion()){
+                    if (cdObj.isConnectingToInternet()) {
+                        new UpdateregisterUser().execute(etFname.getText().toString(), etLname.getText().toString(), etUsername.getText().toString(), etEmail.getText().toString());
+                    }
+                    else{
+                        Generalfunction.Simple1ButtonDialog(thisContext.getResources().getString(R.string.Internet_Message), thisContext);
+                    }
+                }
+                else{
+                    Snackbar snackbar1 = Snackbar.make(scrollView, strValidateMessage, Snackbar.LENGTH_LONG);
+                    snackbar1.show();
+                }
+
+            }
+        });
+
+        //Non Editview
+        btnEdit = (Button) view.findViewById(R.id.editButton);
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DisplayEditview();
+
+            }
+        });
+
+        if (cdObj.isConnectingToInternet()) {
+            new getUser().execute();
+        }
+        else{
+            Generalfunction.Simple1ButtonDialog(thisContext.getResources().getString(R.string.Internet_Message), thisContext);
+        }
+
+        return view;
+    }
+
+
+    // Async task for get user detail
+    public class getUser extends AsyncTask<String, Void, String> {
+
+        ProgressDialog progress;
+        String token;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            SharedPreferences prefs = thisContext.getSharedPreferences("MY_PREFS", thisContext.MODE_PRIVATE);
+            token = prefs.getString("token", "");
+            Log.d("token", token);
+
+            progress = new ProgressDialog(thisContext);
+            progress.setMessage("Loading...");
+            progress.setCancelable(false);
+
+            //start progress dialog
+            progress.show();
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            return WebFunctions.getUser(token);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            //dismiss progress dialor
+            progress.dismiss();
+
+            DisplayNoneditview();
+
+            //Parse usermodel
+            userModel = ParsingFunctions.parseUserModel(result,thisContext);
+
+            if (!userModel.first_name.equals("")) {
+                SharedPreferences.Editor editor = thisContext.getSharedPreferences("MY_PREFS", thisContext.MODE_PRIVATE).edit();
+                editor.putString("first_name", userModel.first_name);
+                editor.commit();
+            }
+
+            Generalfunction.SaveUserDetail(thisContext,userModel.first_name,userModel.last_name,userModel.username,userModel.id,userModel.email);
+
+            ((NavigationalSearchActivity) thisContext).DisplayNavigationDetail();
+
+            strUserid=userModel.id;
+            tvFname.setText(userModel.first_name);
+            tvLname.setText(userModel.last_name);
+            tvUsername.setText(userModel.username);
+            tvEmail.setText(userModel.email);
+
+            etFname.setText(userModel.first_name);
+            etLname.setText(userModel.last_name);
+            etUsername.setText(userModel.username);
+            etEmail.setText(userModel.email);
+
+            tvfL_name.setText(userModel.first_name+" "+userModel.last_name);
+            tvUname.setText(userModel.username);
+
+            String userCoverphotoUrl = userModel.coverPhoto;
+            String userprofilephotoUrl = userModel.profilePhoto;
+
+            if (!Generalfunction.isEmptyCheck(userCoverphotoUrl)) {
+                Picasso.with(thisContext)
+                        .load(userModel.coverPhoto)
+                        .placeholder(R.drawable.no_picture_sign) //this is optional the image to display while the url image is downloading
+                        .error(R.drawable.no_picture_sign)         //this is also optional if some error has occurred in downloading the image this image would be displayed
+                        .into(ivCoverimage);
+            }
+            else{
+                Picasso.with(thisContext).load(R.drawable.no_picture_sign)
+                        .into(ivCoverimage);
+            }
+
+            if (!Generalfunction.isEmptyCheck(userprofilephotoUrl)) {
+                Picasso.with(thisContext).load(userModel.profilePhoto)
+                        .placeholder(R.drawable.no_picture_sign).error(R.drawable.no_picture_sign)
+                        .into(ivProfilephoto);
+
+            }
+            else {
+                Picasso.with(thisContext).load(R.drawable.img_not_available)
+                        .into(ivProfilephoto);
+            }
+        }
+    }
+
+    private boolean CheckValidattion(){
+        boolean isValidate=true;
+
+        String strfname=etFname.getText().toString();
+        String strlname=etLname.getText().toString();
+        String strusername=etUsername.getText().toString();
+        String stremail=etEmail.getText().toString();
+
+        if(Generalfunction.isEmptyCheck(strfname)){
+            isValidate=false;
+            strValidateMessage="First should each be between 2 and 15 characters long";
+        }
+        else if(Generalfunction.isEmptyCheck(strlname)){
+            isValidate=false;
+            strValidateMessage="Last name should each be between 2 and 15 characters long";
+        }
+        else if(Generalfunction.isEmptyCheck(strusername)){
+            isValidate=false;
+            strValidateMessage="Username should be between 3 and 8 characters long";
+        }
+        else if(Generalfunction.isEmptyCheck(stremail)){
+            isValidate=false;
+            strValidateMessage="The email address you've entered is not valid";
+        }
+
+        return isValidate;
+    }
+
+    public class UpdateregisterUser extends AsyncTask<String, Void, String> {
+
+        ProgressDialog progress;
+        String token;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            SharedPreferences prefs = thisContext.getSharedPreferences("MY_PREFS", thisContext.MODE_PRIVATE);
+            token = prefs.getString("token", "");
+            Log.d("token", token);
+
+            progress= new ProgressDialog(thisContext);
+            progress.setMessage("Loading...");
+            progress.setCancelable(false);
+            progress.show();
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            // call webfunction
+            return WebFunctions.updateregisterUser(token,strUserid, params[0], params[1], params[2], params[3]);
+        }
+
+        @Override
+        protected void onPostExecute(String aVoid) {
+            super.onPostExecute(aVoid);
+
+            progress.dismiss();
+
+            if (!aVoid.equals("")) {
+
+                if(aVoid.equalsIgnoreCase("true")){
+
+                    Generalfunction.Simple1ButtonDialog("User has successfully been updated.", getActivity());
+                    new getUser().execute();
+
+                }
+                else{
+
+                    Generalfunction.Simple1ButtonDialog(aVoid, getActivity());
+                }
+
+            }
+
+        }
+    }
+
+    private void DisplayEditview(){
+
+        llNonEdit.setVisibility(View.GONE);
+        llEdit.setVisibility(View.VISIBLE);
+        btnEdit.setVisibility(View.GONE);
+        scrollView.fullScroll(ScrollView.FOCUS_UP);
+
+    }
+
+    private void DisplayNoneditview(){
+
+        llNonEdit.setVisibility(View.VISIBLE);
+        llEdit.setVisibility(View.GONE);
+        btnEdit.setVisibility(View.VISIBLE);
+    }
+
+   static AlertDialog alertDialog;
+    public void showPopUp () {
+        LayoutInflater li = LayoutInflater.from(thisContext);
+        View promptsView = li.inflate(R.layout.password_popup, null);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(thisContext);
+
+        alertDialogBuilder.setView(promptsView);
+
+        etoldPassword = (EditText) promptsView .findViewById(R.id.editOldPassword);
+        etnewPassword = (EditText) promptsView .findViewById(R.id.editNewPassword);
+        btnDone = (Button) promptsView .findViewById(R.id.doneButton);
+        btnDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(etoldPassword.getText().toString().length() > 1){
+
+                    if(etnewPassword.getText().toString().length() > 1){
+                      //  alertDialog.dismiss();
+                        focusOnView();
+                      new UpdateRegisterPwd().execute(etoldPassword.getText().toString(),etnewPassword.getText().toString());
+
+
+                    }
+                    else {
+                        //Snackbar snackbar1 = Snackbar.make(scrollView, "Password should be at least 6 characters", Snackbar.LENGTH_LONG);
+                        etnewPassword.requestFocus();
+                        //snackbar1.show();
+                       // newPassword.setError("Password should be at least 6 characters");
+                    }
+                }
+                else{
+                    //Snackbar snackbar1 = Snackbar.make(scrollView, "Password should be at least 6 characters", Snackbar.LENGTH_LONG);
+                    etoldPassword.requestFocus();
+                   // oldPassword.setError("Password should be at least 6 characters");
+                    //snackbar1.show();
+                }
+
+            }
+        });
+
+        // create alert dialog
+       alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+        // show it
+        //alertDialogBuilder.show();
+    }
+
+    public class UpdateRegisterPwd extends AsyncTask<String, Void, String> {
+
+        ProgressDialog progress;
+        String token;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            SharedPreferences prefs = thisContext.getSharedPreferences("MY_PREFS", thisContext.MODE_PRIVATE);
+            token = prefs.getString("token", "");
+            Log.d("token", token);
+
+            progress= new ProgressDialog(thisContext);
+            progress.setMessage("Loading...");
+            progress.setCancelable(false);
+            progress.show();
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            // call webfunction
+            return WebFunctions.updateregisterPwd(token, params[0], params[1]);
+        }
+
+        @Override
+        protected void onPostExecute(String aVoid) {
+            super.onPostExecute(aVoid);
+
+            progress.dismiss();
+
+            if (!aVoid.equals("")) {
+
+                if(aVoid.equalsIgnoreCase("true")){
+
+                    alertDialog.dismiss();
+                    Generalfunction.Simple1ButtonDialog("User has successfully been updated.", getActivity());
+                    GlobalVar.setMyStringPref(thisContext,Constant.loginUserpwd,etnewPassword.getText().toString());
+
+                    //new getUser().execute();
+
+                }
+                else{
+
+                    Generalfunction.Simple1ButtonDialog(aVoid, getActivity());
+                }
+
+            }
+
+        }
+    }
+
+    // hide keyboard
+    private final void focusOnView() {
+        View view = getActivity().getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                scrollView.fullScroll(View.FOCUS_DOWN);
+            }
+        });
+    }
+
+}

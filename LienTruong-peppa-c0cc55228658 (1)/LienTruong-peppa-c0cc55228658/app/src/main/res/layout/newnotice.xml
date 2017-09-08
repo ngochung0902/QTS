@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_layout_item_count"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+   android:layout_gravity="center"
+   android:layout_marginRight="25dp"
+    android:visibility="visible"
+    android:layout_marginTop="5dp"
+   >
+
+    <ImageView
+        android:id="@+id/tv_navmyprofile"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/profile"
+        android:visibility="visible"
+        tools:ignore="ContentDescription" />
+
+
+    <TextView
+        android:id="@+id/badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_navmyprofile"
+        android:layout_marginLeft="15dp"
+
+        android:background="@drawable/notification_count_borders"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="8dp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+</RelativeLayout>

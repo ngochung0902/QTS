@@ -1,0 +1,350 @@
+<resources>
+    <string name="app_name">Peppa</string>
+    <string name="action_settings">Settings</string>
+    <string name="facebookapp_id">810416655730097</string>
+    <!--<string name="facebookapp_idmy">308098669557582</string>
+
+    <string name="Googlemap_apikey">AIzaSyAd-fAFBzADqD3Kj6W57S574cqfdwawRyA</string>
+-->
+    <string name="facebookapp_idmy">1730590367231008</string>
+    <string name="Googlemap_apikey">AIzaSyAnlTnZZsYzXzAPaITVmpagDysw6K1fwB4</string>
+
+
+    <!-- toolbar -->
+    <string name="action_profile">Profile</string>
+
+    <!-- login -->
+    <!-- <string name="button_facebook_login">LOGIN IN WITH FACEBOOK</string>
+    <string name="button_facebook_account">USE FACEBOOK TO MAKE ACCOUNT</string>-->
+    <string name="button_facebook">LOG IN WITH FACEBOOK</string>
+
+    <string name="f_hint">FIRST NAME</string>
+    <string name="l_hint">LAST NAME</string>
+    <string name="u_hint">USERNAME</string>
+    <string name="email_hint">EMAIL</string>
+    <string name="pw_hint">PASSWORD</string>
+    <string name="forgot_pw">FORGOT PASSWORD</string>
+    <string name="login">LOGIN</string>
+    <string name="create_account">CREATE ACCOUNT</string>
+    <string name="reset_pass">RESET PASSWORD</string>
+    <string name="facebook_mobile">No email address is associated with this Facebook account.</string>
+
+    <!-- search -->
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="greeting">Sup Andrew?</string>
+    <string name="question">What do you feel like?</string>
+    <string name="search_hint">Search Food items or restaurants</string>
+    <string name="location">Collingwood, Vic</string>
+    <string name="locationpopuptital">Enter suburb</string>
+
+    <!-- results -->
+    <string name="title_activity_result">ResultActivity</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="dishes">Dishes</string>
+    <string name="phone_number">03 9123 4567</string>
+
+    <!-- profile -->
+    <string name="title_activity_restaurant">RestaurantActivity</string>
+    <string name="restaurant_name">Duck Place</string>
+    <string name="dish_name">Red duck curry</string>
+    <string name="restaurant_address">2 Victoria Pde, Collingwood</string>
+    <string name="rating">0 </string>
+    <string name="percent_label"> </string>
+    <!--<string name="percent_label"> %</string>-->
+    <string name="votes">320 votes</string>
+    <string name="follow">245 Followers</string>
+    <string name="unfollow_label">Unfollow</string>
+    <string name="follow_label">+ Follow </string>
+    <string name="votetext">VOTES</string>
+    <string name="dishnotavailabel">Dishes not available</string>
+
+
+    <!-- detail -->
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="price">$12</string>
+    <string name="call_label">Call</string>
+    <string name="comments_label">Comments</string>
+    <string name="other_user_fname">Kitty</string>
+    <string name="other_user_lname">Purry</string>
+    <string name="dish_comment">Cupcake ipsum dolor. Sit amet wafer macaroon tiramisu. Croissant icing sweet pastry cookie tart and this will make 120.</string>
+    <string name="descriptionlabel">DESCRIPTION</string>
+    <string name="dish_description">A 500 gram block of silken tofu over creamy potato gratin served under a generous serving of leaves and assorted mushrooms. Meat option also available.</string>
+    <!-- post -->
+    <string name="title_activity_post">PostActivity</string>
+    <string name="restaurant_label">Which restaurant is this from?</string>
+    <string name="restaurant_input_hint">Food Kingdom</string>
+    <string name="dish_input_hint">Sushi Burger</string>
+
+    <string name="price_input_hint">12.40</string>
+    <string name="done">DONE</string>
+
+    <!-- profile -->
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="user_fname">Andrew</string>
+    <string name="user_lname">Pop</string>
+    <string name="user_uname">dru14</string>
+    <string name="following_label">Following</string>
+    <string name="rate_this_dish_label">Rate this dish</string>
+    <string name="user_fullname">Andrew Pop</string>
+
+
+    <!-- rate -->
+    <string name="title_activity_rating">RatingActivity</string>
+    <string name="dish_rating_label">What do you rate this dish?</string>
+    <string name="comment">Comment</string>
+    <string name="Vegetarian_label">VEGETARIAN</string>
+    <string name="Vegetarian_label1">Vegetarian</string>
+    <string name="Vegan_label">VEGAN</string>
+    <string name="Vegan_label1">Vegan</string>
+    <string name="Gluten_free_label">GLUTEN FREE</string>
+    <string name="comment_instruction">How was the dish? (optional)</string>
+
+    <!-- settings -->
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="fullname_label">FULL NAME</string>
+    <string name="fname_label">FIRST NAME</string>
+    <string name="lname_label">LAST NAME</string>
+    <string name="uname_label">USERNAME</string>
+    <string name="email_label">EMAIL ADDRESS</string>
+    <string name="Passwood_label">PASSWORD</string>
+    <string name="email">messageandrew@gmail.com</string>
+    <string name="pw_asterix">**********</string>
+    <string name="title_activity_rate">RateActivity</string>
+    <string name="title_activity_mapview">MapviewActivity</string>
+    <string name="title_activity_follow">FOLLOWING</string>
+    <string name="new_password">New Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="change_password">CHANGE PASSWORD</string>
+    <string name="update_detail">UPDATE DETAILS</string>
+    <string name="edit_detail">EDIT DETAILS</string>
+
+    <!-- filter -->
+    <string name="sort_by_label">Sort by</string>
+    <string name="rating_label">Rating</string>
+    <string name="distance_label">Distance</string>
+    <string name="fiftyhigher">5+</string>
+    <string name="seventyfivehigher">7.5+</string>
+    <string name="ninetyhigher">9+</string>
+    <string name="enter_location">Enter location</string>
+    <string name="price_range_label">Price range</string>
+    <string name="price_lowtohigh">Low to high</string>
+    <string name="price_hightolow">High to low</string>
+    <string name="dietary">Dietary requirements</string>
+    <string name="within_label">Within</string>
+    <string name="onekm">1km</string>
+    <string name="opennow">Open now</string>
+    <string name="fivekm">5km</string>
+    <string name="tenkm">10km</string>
+    <string name="any_label">any</string>
+    <string name="Starter_label">Starter</string>
+    <string name="Main_label">MAIN</string>
+    <string name="Dessert_label">DESSERT</string>
+    <string name="Drink_label">DRINK</string>
+
+
+    <!-- follow -->
+    <string name="user">kittypurry</string>
+    <string name="follow_search_hint">Username</string>
+    <string name="title_activity_profiles_scrolling">ProfilesScrollingActivity</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="title_activity_searches">SearchesActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_filter">Filter</string>
+    <string name="title_activity_navigational_search">NavigationalSearchActivity</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!--Atharva system-->
+
+    <string name="Internet_Message">Unable to connect. Please check your Internet connection.</string>
+    <string name="server_failed_response">Please check your Internet connection.</string>
+    <string name="check_internet_connection">Unable to connect. Please check your Internet connection.</string>
+    <string name="AllowPermissionandroidM">Allow Permission</string>
+
+    <!--navigation item-->
+    <string name="navSearch">SEARCH</string>
+    <string name="navMyprofile">MY PROFILE</string>
+    <string name="navFavourite">FAVOURITES</string>
+    <string name="navSetting">SETTINGS</string>
+    <string name="navLogout">LOGOUT</string>
+    <string name="favoriteTital">FAVOURITES</string>
+
+    <!--user profile-->
+    <string name="followers">FOLLOWERS</string>
+    <string name="followers_tital">FOLLOWING YOU</string>
+    <string name="following">FOLLOWING</string>
+    <string name="favouriteC">FAVOURITE</string>
+    <string name="unfavouriteC">UNFAVOURITE</string>
+
+    <!--favourite word for favourite api-->
+    <string name="favourite_api">favourite</string>
+    <string name="unfavourite_api">unfavourite</string>
+    <string name="people">People</string>
+    <string name="restaurant">Restaurants</string>
+
+    <string name="empty"></string>
+
+    <!--follow/following-->
+    <string name="Rest_followers">RESTAURANT-FOLLOWERS</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus felis eros, mattis vitae elit sed, posuere bibendum nisl. Nunc scelerisque lectus sed justo volutpat, a luctus lectus porta. Sed pulvinar id nibh at gravida. Vivamus non leo eget eros aliquet elementum eget sed odio. Mauris maximus blandit neque eu suscipit. Curabitur nec tempus arcu. Maecenas consequat risus eu diam lobortis suscipit. Sed quis mauris consectetur, malesuada quam et, vulputate mauris. Pellentesque lorem tortor, vestibulum et scelerisque sit amet, maximus in nisl. Donec at tellus sed risus lobortis egestas id a nunc. Pellentesque semper libero et euismod feugiat. Duis tincidunt mattis consectetur. Quisque tempus metus et eros bibendum sollicitudin. Aenean venenatis accumsan elementum. Quisque auctor enim et vestibulum semper.  Morbi dapibus elit rhoncus ex tincidunt dapibus. Ut accumsan facilisis tincidunt. Pellentesque tempor malesuada iaculis. Fusce aliquet sed metus sit amet lacinia. Mauris luctus, ante at aliquet tincidunt, augue elit convallis purus, quis viverra lorem felis in lorem. Pellentesque malesuada bibendum mi, quis consequat lectus lacinia nec. Donec in nulla venenatis, tempus arcu vel, fringilla neque.  Proin vitae erat volutpat, pharetra nisl eget, commodo justo. Donec dolor risus, hendrerit sed molestie at, cursus non odio. In in semper erat. Vivamus laoreet vitae justo quis pretium. Duis eros elit, venenatis vitae tortor a, rhoncus posuere leo. Etiam suscipit dapibus posuere. Nullam sit amet nisl mi.  Etiam et ullamcorper urna, quis bibendum ante. In hac habitasse platea dictumst. Sed malesuada luctus odio. Ut congue, nisi eu placerat facilisis, turpis magna accumsan sem, sed vulputate nunc tellus at justo. Nulla nec semper mauris. Proin eleifend ac neque ut efficitur. In at imperdiet risus, a suscipit lectus.  Nunc pellentesque facilisis augue, non dignissim massa luctus at. Vivamus et lorem vel tellus eleifend sollicitudin eu et purus. Suspendisse egestas maximus mi, et vulputate tellus consequat vel. Etiam luctus ligula sed pharetra sollicitudin. Etiam mollis convallis ipsum, in fermentum lorem pulvinar vel. Nulla blandit ex sit amet risus mollis tincidunt. Integer suscipit tellus a lorem sodales euismod. Curabitur sollicitudin quam vel quam mattis ultrices. Vivamus rhoncus magna at dolor cursus pellentesque. Aliquam venenatis dolor dui. Vivamus mattis efficitur orci, in facilisis velit posuere ac. Mauris luctus massa a elit vulputate dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus felis eros, mattis vitae elit sed, posuere bibendum nisl. Nunc scelerisque lectus sed justo volutpat, a luctus lectus porta. Sed pulvinar id nibh at gravida. Vivamus non leo eget eros aliquet elementum eget sed odio. Mauris maximus blandit neque eu suscipit. Curabitur nec tempus arcu. Maecenas consequat risus eu diam lobortis suscipit. Sed quis mauris consectetur, malesuada quam et, vulputate mauris. Pellentesque lorem tortor, vestibulum et scelerisque sit amet, maximus in nisl. Donec at tellus sed risus lobortis egestas id a nunc. Pellentesque semper libero et euismod feugiat. Duis tincidunt mattis consectetur. Quisque tempus metus et eros bibendum sollicitudin. Aenean venenatis accumsan elementum. Quisque auctor enim et vestibulum semper.  Morbi dapibus elit rhoncus ex tincidunt dapibus. Ut accumsan facilisis tincidunt. Pellentesque tempor malesuada iaculis. Fusce aliquet sed metus sit amet lacinia. Mauris luctus, ante at aliquet tincidunt, augue elit convallis purus, quis viverra lorem felis in lorem. Pellentesque malesuada bibendum mi, quis consequat lectus lacinia nec. Donec in nulla venenatis, tempus arcu vel, fringilla neque.  Proin vitae erat volutpat, pharetra nisl eget, commodo justo. Donec dolor risus, hendrerit sed molestie at, cursus non odio. In in semper erat. Vivamus laoreet vitae justo quis pretium. Duis eros elit, venenatis vitae tortor a, rhoncus posuere leo. Etiam suscipit dapibus posuere. Nullam sit amet nisl mi.  Etiam et ullamcorper urna, quis bibendum ante. In hac habitasse platea dictumst. Sed malesuada luctus odio. Ut congue, nisi eu placerat facilisis, turpis magna accumsan sem, sed vulputate nunc tellus at justo. Nulla nec semper mauris. Proin eleifend ac neque ut efficitur. In at imperdiet risus, a suscipit lectus.  Nunc pellentesque facilisis augue, non dignissim massa luctus at. Vivamus et lorem vel tellus eleifend sollicitudin eu et purus. Suspendisse egestas maximus mi, et vulputate tellus consequat vel. Etiam luctus ligula sed pharetra sollicitudin. Etiam mollis convallis ipsum, in fermentum lorem pulvinar vel. Nulla blandit ex sit amet risus mollis tincidunt. Integer suscipit tellus a lorem sodales euismod. Curabitur sollicitudin quam vel quam mattis ultrices. Vivamus rhoncus magna at dolor cursus pellentesque. Aliquam venenatis dolor dui. Vivamus mattis efficitur orci, in facilisis velit posuere ac. Mauris luctus massa a elit vulputate dapibus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus felis eros, mattis vitae elit sed, posuere bibendum nisl. Nunc scelerisque lectus sed justo volutpat, a luctus lectus porta. Sed pulvinar id nibh at gravida. Vivamus non leo eget eros aliquet elementum eget sed odio. Mauris maximus blandit neque eu suscipit. Curabitur nec tempus arcu. Maecenas consequat risus eu diam lobortis suscipit. Sed quis mauris consectetur, malesuada quam et, vulputate mauris. Pellentesque lorem tortor, vestibulum et scelerisque sit amet, maximus in nisl. Donec at tellus sed risus lobortis egestas id a nunc. Pellentesque semper libero et euismod feugiat. Duis tincidunt mattis consectetur. Quisque tempus metus et eros bibendum sollicitudin. Aenean venenatis accumsan elementum. Quisque auctor enim et vestibulum semper.  Morbi dapibus elit rhoncus ex tincidunt dapibus. Ut accumsan facilisis tincidunt. Pellentesque tempor malesuada iaculis. Fusce aliquet sed metus sit amet lacinia. Mauris luctus, ante at aliquet tincidunt, augue elit convallis purus, quis viverra lorem felis in lorem. Pellentesque malesuada bibendum mi, quis consequat lectus lacinia nec. Donec in nulla venenatis, tempus arcu vel, fringilla neque.  Proin vitae erat volutpat, pharetra nisl eget, commodo justo. Donec dolor risus, hendrerit sed molestie at, cursus non odio. In in semper erat. Vivamus laoreet vitae justo quis pretium. Duis eros elit, venenatis vitae tortor a, rhoncus posuere leo. Etiam suscipit dapibus posuere. Nullam sit amet nisl mi.  Etiam et ullamcorper urna, quis bibendum ante. In hac habitasse platea dictumst. Sed malesuada luctus odio. Ut congue, nisi eu placerat facilisis, turpis magna accumsan sem, sed vulputate nunc tellus at justo. Nulla nec semper mauris. Proin eleifend ac neque ut efficitur. In at imperdiet risus, a suscipit lectus.  Nunc pellentesque facilisis augue, non dignissim massa luctus at. Vivamus et lorem vel tellus eleifend sollicitudin eu et purus. Suspendisse egestas maximus mi, et vulputate tellus consequat vel. Etiam luctus ligula sed pharetra sollicitudin. Etiam mollis convallis ipsum, in fermentum lorem pulvinar vel. Nulla blandit ex sit amet risus mollis tincidunt. Integer suscipit tellus a lorem sodales euismod. Curabitur sollicitudin quam vel quam mattis ultrices. Vivamus rhoncus magna at dolor cursus pellentesque. Aliquam venenatis dolor dui. Vivamus mattis efficitur orci, in facilisis velit posuere ac. Mauris luctus massa a elit vulputate dapibus.</string>
+
+    <!--Image update/delete/add-->
+    <string name="image_delete">You want to delete this entry?</string>
+    <string name="image_update_cover">Would you like to update your cover photo?</string>
+    <string name="image_update_photo">Would you like to update your profile picture?</string>
+
+    <string name="type">TYPE</string>
+    <string name="showfavoritefirst_label">SHOW FAVOURITES FIRST</string>
+    <string name="all">ALL</string>
+    <string name="entry_label">STARTER</string>
+
+    <string name="zero">0</string>
+    <string name="fifty">5</string>
+    <string name="seventyfive">7.5</string>
+    <string name="ninty">9</string>
+
+    <string name="Phone_doesnot_support_location_service">Your phone does not support Location Service</string>
+
+    <string name="next_item">NEXT ITEM </string>
+
+    <string name="oneno">1</string>
+    <string name="fiveno">5</string>
+    <string name="tenno">10</string>
+    <string name="anyno">0</string>
+
+    <string name="search">SEARCH</string>
+    <string name="enter_suburb">Enter Suburb</string>
+
+    <string name="Facebook_Without_Email">No email address is associated with this Facebook account.</string>
+
+    <string name="API_Exception">Something went wrong.</string>
+
+    <string name="share">Share with</string>
+    <string name="share_with_facebook">FACEBOOK</string>
+    <string name="share_with_instagram">INSTAGRAM</string>
+
+    <string name="skip">Skip</string>
+
+    <string name="firstname_lasrnameAlert">First and Last name should each be between 2 and 15 characters long</string>
+
+    <string name="google_app_id">your app id</string>
+
+    <string name="progressMsg">Please wait..</string>
+
+    <!--post-->
+
+    <string name="hintNewAddress">enter a new address here</string>
+    <string name="hintAddress">enter address here</string>
+    <string name="hintRestaurantname">enter restaurant name here</string>
+    <string name="hintDishname">enter dish name here</string>
+
+    <string name="rest_address_label">where\'s it located?</string>
+    <string name="dish_name_label">what\'s the name of this dish?</string>
+    <string name="price_label">Price</string>
+    <string name="price_Post">How much was this?</string>
+    <!--<string name="hintAddress">where\'s it located?</string>
+
+    <string name="dishname">what\'s the name of this dish?</string>
+    <string name="priceHint">How much was this?</string>-->
+
+    <string name="noconnection">No internet connection</string>
+    <string name="goonline">Go Online</string>
+    <string name="tokendenied">HTTP Token: Access denied.</string>
+
+    <string name="btn_quickpost_name">Add to my profile</string>
+    <string name="delete_dish">You want to delete this dish from your profile</string>
+
+
+</resources>

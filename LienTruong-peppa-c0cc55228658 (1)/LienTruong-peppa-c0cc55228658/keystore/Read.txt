@@ -1,0 +1,27 @@
+Keystore Details: 
+
+Keystore path:  E:\atharva_studio\peppa\Keystore
+Alias:          peppa_keystore
+All password:   keystore_peppa   (only for peppa)
+First name:     Android development
+Organaization unit : software development
+Organization: Android application
+city:           Ahmedabad
+state:          gujarat
+country:        In
+
+
+Playstore Details: 
+
+Short Description :
+Full description :
+Screen shot : 
+Promo Video : 
+Application type * 
+Category *
+Content rating *  
+Website  
+Email * 
+Phone 
+
+

@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".Activity.MainActivity">
+
+
+    <item
+        android:id="@+id/actionMapResult"
+        android:orderInCategory="200"
+        android:title="@string/action_profile"
+        app:showAsAction="always"
+        android:icon="@mipmap/mapview"/>
+
+    <item
+        android:id="@+id/actionFilterResult"
+        android:orderInCategory="200"
+        android:title="@string/action_profile"
+        app:showAsAction="always"
+        android:icon="@mipmap/filter"/>
+
+</menu>

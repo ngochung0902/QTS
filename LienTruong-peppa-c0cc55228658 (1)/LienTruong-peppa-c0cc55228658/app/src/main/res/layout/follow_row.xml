@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/stroke"
+    android:orientation="horizontal">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/followerImage"
+        android:layout_width="@dimen/circleimage_list"
+        android:layout_height="@dimen/circleimage_list"
+        android:layout_gravity="center"
+        android:src="@drawable/ph_img_notavailable"
+        android:layout_marginLeft="10dp"
+        app:border_color="@android:color/white"
+        app:border_width="2dp"
+        android:visibility="visible"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="5"
+        android:orientation="horizontal"
+        android:id="@+id/people">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/followerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:text="@string/user"
+                android:textColor="@color/colorPrimaryText"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/followersView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:paddingLeft="10dp"
+                android:singleLine="true"
+                android:text="1,123 followers"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnfollow"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/pink_outline_bg"
+        android:letterSpacing=".1"
+        android:paddingRight="12dp"
+        android:paddingLeft="12dp"
+        android:text="FOLLOW"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textColor="@color/colorSecondary"
+        android:textSize="@dimen/generaltextsize"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/btnunfollow"
+        style="?attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/pink_round_button"
+        android:letterSpacing=".1"
+        android:paddingRight="12dp"
+        android:paddingLeft="12dp"
+        android:text="UNFOLLOW"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:textColor="@color/white"
+        android:textSize="@dimen/generaltextsize"
+        android:visibility="gone" />
+
+</LinearLayout>
+
+
+

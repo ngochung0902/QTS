@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    xmlns:lv="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context=".Activity.SplashActivity"
+    >
+
+    <me.wangyuwei.loadingview.LoadingView
+        android:id="@+id/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        lv:lv_duration="3"
+        lv:lv_start_color="#fff"
+        lv:lv_end_color="#fff"
+        lv:lv_internal_radius="4dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        lv:lv_external_radius="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/ll_appicon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/shape"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/tvappname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/loading_view"
+            android:shadowColor="@color/white"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/largetextsize"
+            android:letterSpacing="0.5"
+            android:visibility="visible"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

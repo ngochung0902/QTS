@@ -1,0 +1,45 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Activity.MainActivity">
+
+
+    <item
+        android:id="@+id/actionAddresspin"
+        android:title="@string/action_profile"
+        app:showAsAction="always"
+        android:icon="@mipmap/addresspingrey_action"/>
+    <item
+        android:id="@+id/actionCallBlack"
+        android:title="@string/action_profile"
+        app:showAsAction="always"
+        android:icon="@mipmap/phone"/>
+
+    <item
+        android:id="@+id/favouriteDetail"
+        android:icon="@mipmap/favourite_action"
+        android:orderInCategory="100"
+        android:title="favourite"
+        app:showAsAction="always" />   
+
+    <item
+        android:id="@+id/favouriteFilledDetail"
+        android:icon="@mipmap/favouritefilled_action"
+        android:orderInCategory="100"
+        android:title="favourited"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/actionTrash"
+        android:orderInCategory="300"
+        android:title="trash"
+        app:showAsAction="always"
+        android:icon="@mipmap/trashgrey"/>
+    <item
+        android:id="@+id/actiondetail"
+        android:orderInCategory="300"
+        android:title="trash"
+        app:showAsAction="always"
+        android:icon="@mipmap/restaurantg"/>
+
+</menu>

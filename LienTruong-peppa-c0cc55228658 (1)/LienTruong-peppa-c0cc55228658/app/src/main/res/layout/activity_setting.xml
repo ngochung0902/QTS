@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_grey"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/commonheight_headerphoto"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/transparantblack">
+                <ImageView
+                    android:id="@+id/ivCoverimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commonheight_headerphoto"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:tint="#11000000"
+                    android:background="@drawable/no_image" />
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="top"
+                android:adjustViewBounds="true"
+                android:background="@drawable/gradient_top" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom"
+                android:adjustViewBounds="true"
+                android:background="@drawable/gradient_bottom" />
+
+            <LinearLayout
+                android:id="@+id/userLinearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|bottom"
+                android:paddingBottom="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/userFNameSettingTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/verybiglargetextsize"
+                    android:singleLine="true"
+                    android:ellipsize="end"/>
+
+                <com.peppa.app.utility.LetterSpacingTextView
+                    android:id="@+id/restaurantNameDetailTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:singleLine="true"
+                    android:ellipsize="end"/>
+
+
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivprofilephoto"
+                android:layout_width="@dimen/circleimage_medium"
+                android:layout_height="@dimen/circleimage_medium"
+                android:layout_gravity="center"
+                android:src="@drawable/no_image"
+                app:border_color="@android:color/white"
+                app:border_width="1dp"
+                />
+
+        </FrameLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"  >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/editLLT"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:paddingTop="20dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/settingTextlabel"
+                        android:text="@string/fname_label"
+                        />
+
+                    <EditText
+                        android:id="@+id/etfname"
+                        style="@style/settingEdittextAnswer"
+                        android:hint="@string/user_fname"
+                        />
+
+                    <TextView
+                        style="@style/settingTextlabel"
+                        android:text="@string/lname_label"
+                        />
+
+                    <EditText
+                        android:id="@+id/etlname"
+                        style="@style/settingEdittextAnswer"
+                        android:hint="@string/user_lname"
+                        />
+
+                    <TextView
+                        style="@style/settingTextlabel"
+                        android:text="@string/uname_label"
+                        />
+
+                    <EditText
+                        android:id="@+id/etusername"
+                        style="@style/settingEdittextAnswer"
+                        android:hint="@string/user_uname"
+                        />
+
+                    <TextView
+                        style="@style/settingTextlabel"
+                        android:text="@string/email_label" />
+
+                    <EditText
+                        android:id="@+id/etemail"
+                        style="@style/settingEdittextAnswer"
+                        android:hint="@string/email"
+                        android:inputType="textEmailAddress"/>
+
+                    <EditText
+                        android:id="@+id/passwordEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginRight="20dp"
+                        android:text="@string/pw_asterix"
+                        android:singleLine="true"
+                        android:textColor="@color/hint_grey"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/updateButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:background="@color/colorSecondary"
+                        android:paddingBottom="15dp"
+                        android:paddingTop="15dp"
+
+                        android:text="@string/update_detail"
+                        android:textColor="@android:color/white"
+                        android:textSize="17sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/nonEditLLT"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/white"
+                    android:orientation="vertical"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        style="@style/settingTextlabel"
+                        android:text="@string/fname_label" />
+
+                    <TextView
+                        android:id="@+id/tvfname_edit"
+                        style="@style/settingTextlabelAnswer" />
+
+                    <TextView
+                        style="@style/settingTextlabel"
+                        android:text="@string/lname_label" />
+
+                    <TextView
+                        android:id="@+id/tvlname_edit"
+                        style="@style/settingTextlabelAnswer" />
+
+
+                    <TextView
+                        style="@style/settingTextlabel"
+                        android:text="@string/uname_label" />
+
+                    <TextView
+                        android:id="@+id/tvusername_edit"
+                        style="@style/settingTextlabelAnswer" />
+
+                    <TextView
+                        style="@style/settingTextlabel"
+                        android:text="@string/email_label" />
+
+                    <TextView
+                        android:id="@+id/tvemail_edit"
+                        style="@style/settingTextlabelAnswer"/>
+
+                    <TextView
+                        style="@style/settingTextlabel" />
+
+
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/editButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fullbuttonheight"
+                    android:background="@color/colorSecondary"
+                    android:text="@string/edit_detail"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/nonEditLLT"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/mediumtextsize" />
+            </RelativeLayout>
+
+        </ScrollView>
+    </LinearLayout>
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            android:fitsSystemWindows="true"/>
+
+    </android.support.design.widget.AppBarLayout>
+</android.support.design.widget.CoordinatorLayout>

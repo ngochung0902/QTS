@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="lastdaytips.com.lastdaytips.activity.ActMenu">
+    <ImageView
+        android:layout_marginTop="@dimen/s20"
+        android:id="@+id/img_lastday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/lastday"/>
+    <ListView
+        android:layout_marginTop="@dimen/s20"
+        android:id="@+id/lv_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/img_lastday"
+        android:layout_alignParentStart="true">
+    </ListView>
+</RelativeLayout>
